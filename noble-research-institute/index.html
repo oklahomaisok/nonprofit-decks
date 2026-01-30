@@ -17,6 +17,9 @@
             --primary: #012169;
             --secondary: #006a2d;
             --primary-dark: #000003;
+            --logo-background: #ffffff;
+            --nav-text: #1a1a1a;
+            --nav-text-muted: #666666;
             --bgca-blue: #0081C6;
             --bgca-dark-blue: #004B87;
             --bgca-green: #84BF00;
@@ -92,30 +95,30 @@
 </head>
 <body class="min-h-screen flex flex-col items-center selection:bg-[var(--secondary)]/30">
 
-    <!-- Fixed Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-4 bg-primary/90 backdrop-blur-md border-b border-white/10 h-16">
+    <!-- Fixed Navigation - uses logo background color for proper contrast -->
+    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-4 backdrop-blur-md border-b h-16" style="background-color: var(--logo-background); border-color: color-mix(in srgb, var(--nav-text) 10%, transparent);">
         <div class="flex items-center gap-3 w-auto md:w-1/3">
             <img src="assets/logo.svg" alt="Noble Research Institute" class="h-10 w-auto object-contain">
         </div>
 
         <div id="pagination-dots" class="hidden sm:flex items-center justify-center gap-2 w-1/3">
-            <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
-            <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
-            <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
-            <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
-            <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+            <div class="w-1.5 h-1.5 rounded-full" style="background-color: color-mix(in srgb, var(--nav-text) 20%, transparent);"></div>
+            <div class="w-1.5 h-1.5 rounded-full" style="background-color: color-mix(in srgb, var(--nav-text) 20%, transparent);"></div>
+            <div class="w-1.5 h-1.5 rounded-full" style="background-color: color-mix(in srgb, var(--nav-text) 20%, transparent);"></div>
+            <div class="w-1.5 h-1.5 rounded-full" style="background-color: color-mix(in srgb, var(--nav-text) 20%, transparent);"></div>
+            <div class="w-1.5 h-1.5 rounded-full" style="background-color: color-mix(in srgb, var(--nav-text) 20%, transparent);"></div>
         </div>
 
         <div class="hidden md:flex items-center justify-end gap-2 w-1/3">
-            <button id="prevBtn" class="p-2 rounded-full hover:bg-white/10 text-neutral-400 hover:text-secondary transition-colors">
+            <button id="prevBtn" class="p-2 rounded-full transition-colors" style="color: var(--nav-text-muted);">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
-            <button id="nextBtn" class="p-2 rounded-full hover:bg-white/10 text-neutral-400 hover:text-secondary transition-colors">
+            <button id="nextBtn" class="p-2 rounded-full transition-colors" style="color: var(--nav-text-muted);">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </button>
         </div>
 
-        <div class="md:hidden flex items-center justify-end w-auto text-secondary text-xs gap-1 opacity-80">
+        <div class="md:hidden flex items-center justify-end w-auto text-xs gap-1 opacity-80" style="color: var(--secondary);">
             <span class="font-display font-bold tracking-widest uppercase">SWIPE</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
         </div>
@@ -140,11 +143,11 @@
 
                 <div class="mb-4">
                     <h1 class="leading-[0.9] [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate text-4xl md:text-5xl tracking-wide font-display uppercase text-white mb-4 drop-shadow-lg">
-                        Regenerating<br>
-                        <span class="text-secondary">The Land</span>
+                        Building<br>
+                        <span class="text-secondary">Futures</span>
                     </h1>
                     <p class="[animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll animate text-lg text-neutral-200 max-w-[90%] border-l-4 border-secondary pl-4">
-                        To save our nation’s grazing lands by promoting land stewardship through management, building soil health and keeping farmers and ranchers on the land.
+                        Serving farmers and ranchers in Oklahoma through education and research.
                     </p>
                 </div>
             </div>
@@ -168,10 +171,10 @@
                             <div class="p-2 bg-secondary rounded-full text-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                             </div>
-                            <h3 class="text-white font-display text-xl uppercase tracking-wide">The Challenge</h3>
+                            <h3 class="text-white font-display text-xl uppercase tracking-wide">The Need</h3>
                         </div>
                         <p class="text-sm text-neutral-300 pl-11">
-                            Farmers and ranchers face mounting challenges: degraded soils, unpredictable weather, and economic pressures threatening their way of life.
+                            Grazing lands face increasing challenges from climate change, economic pressures, and loss of generational knowledge.
                         </p>
                     </div>
 
@@ -188,7 +191,7 @@
                             <h3 class="text-secondary font-display text-xl uppercase tracking-wide">Our Solution</h3>
                         </div>
                         <p class="text-sm text-neutral-300 pl-11 relative z-10">
-                            We provide cutting-edge research, education, and hands-on support to help land stewards build resilient operations.
+                            We provide education, research, and support to help farmers and ranchers steward their land sustainably.
                         </p>
                     </div>
                 </div>
@@ -209,12 +212,12 @@
                 </header>
 
                 <div class="grid grid-cols-2 gap-4 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
-                    <div class="bg-white/10 p-4 rounded border border-white/5 backdrop-blur-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><h4 class="text-white font-bold text-2xl mt-2">50+</h4><p class="text-[10px] text-neutral-300 uppercase tracking-wide">Years of Research</p></div><div class="bg-white/10 p-4 rounded border border-white/5 backdrop-blur-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/></svg><h4 class="text-white font-bold text-2xl mt-2">14K</h4><p class="text-[10px] text-neutral-300 uppercase tracking-wide">Acres of Land</p></div><div class="bg-white/10 p-4 rounded border border-white/5 backdrop-blur-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><h4 class="text-white font-bold text-2xl mt-2">1000+</h4><p class="text-[10px] text-neutral-300 uppercase tracking-wide">Farmers Served</p></div><div class="bg-white/10 p-4 rounded border border-white/5 backdrop-blur-sm"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg><h4 class="text-white font-bold text-2xl mt-2">100%</h4><p class="text-[10px] text-neutral-300 uppercase tracking-wide">Nonprofit Mission</p></div>
+                    <div class="bg-white/10 p-4 rounded border border-white/5"><h4 class="text-white font-bold text-2xl mt-2">50K+</h4><p class="text-[10px] text-neutral-300 uppercase tracking-wide">Acres Improved</p></div>
                 </div>
 
                 <div class="mt-6 bg-white/5 border border-white/10 p-4 rounded-lg [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
                     <p class="text-sm text-secondary font-bold uppercase tracking-wide mb-1">Your Impact</p>
-                    <p class="text-white text-lg font-display">Your support funds research that helps farmers and ranchers thrive for generations.</p>
+                    <p class="text-white text-lg font-display">$100 provides educational materials for one rancher.</p>
                 </div>
             </div>
         </section>
@@ -233,14 +236,13 @@
 
                 <blockquote class="[animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
                     <p class="text-2xl md:text-3xl font-display text-white leading-tight mb-6">
-                        "“That was the best workshop I’ve attended in my seven decades. Mike and Steven are excellent educators, and the materials were awesome. The course design was not only educational but inspirational and motivational as well.
-”"
+                        "That was the best workshop I've attended in my seven decades."
                     </p>
                     <footer class="flex items-center gap-4 border-l-4 border-secondary pl-4">
                         <div class="w-12 h-12 rounded-full bg-secondary/20 border-2 border-secondary flex items-center justify-center text-secondary font-bold text-sm flex-shrink-0">LF</div>
                         <div>
-                            <p class="text-secondary font-bold">Legg Farms, Cow</p>
-                            <p class="text-neutral-400 text-sm">Calf, Sheep on 1,400 acres</p>
+                            <p class="text-secondary font-bold">Legg Farms</p>
+                            <p class="text-neutral-400 text-sm">Rancher</p>
                         </div>
                     </footer>
                 </blockquote>
@@ -259,11 +261,11 @@
                 </div>
 
                 <h2 class="text-3xl md:text-4xl font-display text-white uppercase tracking-wide mb-2 [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
-                    Partner With Us
+                    Join Our Mission
                 </h2>
 
                 <p class="text-neutral-300 text-sm mb-8 max-w-xs mx-auto [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
-                    Join our mission to regenerate the land and support those who steward it.
+                    Partner with us to preserve grazing lands for future generations.
                 </p>
 
                 <div class="[animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll w-full">
