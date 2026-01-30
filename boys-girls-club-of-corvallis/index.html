@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boys & Girls Club Of Corvallis | Impact Deck</title>
+  <meta name="description" content="Our Mission is to attract, continually engage, and inspire youth in elementary, middle and high school to realize their full potential.">
+  <meta property="og:title" content="Boys & Girls Club Of Corvallis | Impact Deck">
+  <meta property="og:description" content="Our Mission is to attract, continually engage, and inspire youth in elementary, middle and high school to realize their full potential.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --primary: #0493d3;
+      --secondary: #FFC303;
+      --font-display: 'Montserrat', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: #0a0a0a;
+      color: #fff;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+    .deck-container {
+      display: flex;
+      width: fit-content;
+      height: 100vh;
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .slide-content {
+      position: relative;
+      z-index: 10;
+      max-width: 900px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .slide-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.3;
+    }
+
+    .slide-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+
+    .headline {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subheadline {
+      font-size: clamp(1.25rem, 2.5vw, 2rem);
+      line-height: 1.4;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 2rem;
+    }
+
+    .body-text {
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.8);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .accent {
+      color: var(--secondary);
+    }
+
+    .primary-bg {
+      background: var(--primary);
+    }
+
+    .secondary-bg {
+      background: var(--secondary);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.125rem;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      margin-top: 2rem;
+    }
+
+    .btn-primary {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(255,255,255,0.2);
+    }
+
+    /* Metrics Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .metric-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .metric-value {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--secondary);
+      line-height: 1;
+    }
+
+    .metric-label {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      margin-top: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Logo */
+    .org-logo {
+      max-width: 200px;
+      max-height: 80px;
+      margin-bottom: 2rem;
+      filter: brightness(0) invert(1);
+    }
+
+    /* Pricing Cards */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .pricing-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: var(--secondary);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--secondary);
+      background: rgba(255,195,3,0.05);
+    }
+
+    .tier-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .tier-price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .tier-price span {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+    }
+
+    .tier-features {
+      list-style: none;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .tier-features li {
+      padding: 0.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Navigation Dots */
+    .nav-dots {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.75rem;
+      z-index: 100;
+      padding: 0.75rem 1.5rem;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 50px;
+    }
+
+    .nav-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .nav-dot:hover,
+    .nav-dot.active {
+      background: var(--secondary);
+      transform: scale(1.2);
+    }
+
+    /* Scroll Hint */
+    .scroll-hint {
+      position: fixed;
+      right: 2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      z-index: 100;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+
+    /* Fade in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Contact info */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+      text-align: left;
+    }
+
+    .contact-item {
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.03);
+      border-radius: 12px;
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-value {
+      font-size: 1rem;
+      word-break: break-word;
+    }
+
+    .contact-value a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .contact-value a:hover {
+      color: var(--secondary);
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .slide-content {
+        padding: 1.5rem;
+      }
+
+      .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .metric-card {
+        padding: 1.25rem;
+      }
+
+      .metric-value {
+        font-size: 2rem;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .scroll-hint {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck-container" id="deck">
+    <!-- Slide 1: Cover -->
+    <section class="slide" id="slide-1">
+      <div class="slide-bg" style="background-image: url('');"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content fade-in">
+        
+        <img src="assets/logo.png" alt="Boys & Girls Club Of Corvallis" class="org-logo">
+        
+        <h1 class="headline">Boys & Girls Club Of Corvallis</h1>
+        <p class="subheadline">Transforming Lives Through Youth Development</p>
+      </div>
+    </section>
+
+    <!-- Slide 2: Mission -->
+    <section class="slide" id="slide-2">
+      <div class="slide-bg" style="background-image: url('');"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content fade-in">
+        <p class="accent" style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">Our Mission</p>
+        <h2 class="headline" style="font-size: clamp(2rem, 4vw, 3.5rem);">Our Mission is to attract, continually engage, and</h2>
+        <p class="body-text">Our Mission is to attract, continually engage, and inspire youth in elementary, middle and high school to realize their full potential.</p>
+      </div>
+    </section>
+
+    <!-- Slide 3: Impact -->
+    <section class="slide" id="slide-3">
+      <div class="slide-bg" style="background-image: url('');"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content fade-in">
+        <p class="accent" style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">Our Impact</p>
+        <h2 class="headline" style="font-size: clamp(2rem, 4vw, 3rem);">Making a Difference</h2>
+        <div class="metrics-grid">
+          <div class="metric-card">
+      <div class="metric-value">$4.4M</div>
+      <div class="metric-label">Annual Budget</div>
+    </div>
+          <div class="metric-card">
+      <div class="metric-value">20+</div>
+      <div class="metric-label">Programs</div>
+    </div>
+          <div class="metric-card">
+      <div class="metric-value">100+</div>
+      <div class="metric-label">Volunteers</div>
+    </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: Story -->
+    <section class="slide" id="slide-4">
+      <div class="slide-bg" style="background-image: url('');"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content fade-in">
+        <p class="accent" style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">A Story of Impact</p>
+        <h2 class="headline" style="font-size: clamp(1.75rem, 3vw, 2.5rem);">"Before joining, I didn't know what was possible. Now I'm heading to college with a full scholarship."</h2>
+        <p class="body-text" style="margin-top: 2rem; font-style: italic;">One of countless success stories made possible through comprehensive youth development programming.</p>
+      </div>
+    </section>
+
+    <!-- Slide 5: Partnership -->
+    <section class="slide" id="slide-5">
+      <div class="slide-bg" style="background-image: url('');"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content fade-in">
+        <p class="accent" style="font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">Partner With Us</p>
+        <h2 class="headline" style="font-size: clamp(1.75rem, 3vw, 2.5rem);">Your Story, Professionally Told</h2>
+        <p class="body-text" style="margin-bottom: 2rem;">Impact decks that convert donors. We handle the design, you focus on your mission.</p>
+        <div class="pricing-grid">
+          <div class="pricing-card">
+            <div class="tier-name">Standard</div>
+            <div class="tier-price">$297 <span>+ $27/mo</span></div>
+            <ul class="tier-features">
+              <li>1 Impact Deck</li>
+              <li>Hosted & Maintained</li>
+              <li>Quarterly Refresh</li>
+            </ul>
+          </div>
+          <div class="pricing-card featured">
+            <div class="tier-name">Plus</div>
+            <div class="tier-price">$497 <span>+ $47/mo</span></div>
+            <ul class="tier-features">
+              <li>1 Impact Deck</li>
+              <li>2 Individual Stories</li>
+              <li>Hosted & Maintained</li>
+              <li>Quarterly Refresh</li>
+            </ul>
+          </div>
+          <div class="pricing-card">
+            <div class="tier-name">Own It</div>
+            <div class="tier-price">$1,497 <span>one-time</span></div>
+            <ul class="tier-features">
+              <li>Everything in Plus</li>
+              <li>Full Ownership</li>
+              <li>Source Files</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: CTA -->
+    <section class="slide" id="slide-6">
+      <div class="slide-bg" style="background-image: url('');"></div>
+      <div class="slide-overlay"></div>
+      <div class="slide-content fade-in">
+        <h2 class="headline">Let's Tell Your Story</h2>
+        <p class="subheadline">Ready to transform how donors see your impact?</p>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:info@bgccorvallis.org">info@bgccorvallis.org</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Website</div>
+            <div class="contact-value"><a href="https://www.bgccorvallis.org" target="_blank">www.bgccorvallis.org</a></div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Corvallis, OR</div>
+          </div>
+        </div>
+        <a href="mailto:info@bgccorvallis.org?subject=Impact%20Deck%20Inquiry" class="btn btn-primary">Get Started →</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav-dots">
+    <div class="nav-dot active" data-slide="1"></div>
+    <div class="nav-dot" data-slide="2"></div>
+    <div class="nav-dot" data-slide="3"></div>
+    <div class="nav-dot" data-slide="4"></div>
+    <div class="nav-dot" data-slide="5"></div>
+    <div class="nav-dot" data-slide="6"></div>
+  </nav>
+
+  <div class="scroll-hint">Scroll →</div>
+
+  <script>
+    // Navigation dots
+    const dots = document.querySelectorAll('.nav-dot');
+    const slides = document.querySelectorAll('.slide');
+    const container = document.getElementById('deck');
+
+    dots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        const slideNum = dot.dataset.slide;
+        document.getElementById(`slide-${slideNum}`).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Update active dot on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const slideId = entry.target.id;
+          const slideNum = slideId.split('-')[1];
+          dots.forEach(d => d.classList.remove('active'));
+          document.querySelector(`[data-slide="${slideNum}"]`)?.classList.add('active');
+
+          // Trigger fade-in animation
+          entry.target.querySelector('.fade-in')?.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.5 });
+
+    slides.forEach(slide => observer.observe(slide));
+
+    // Initial animation
+    document.querySelector('#slide-1 .fade-in')?.classList.add('visible');
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      const currentSlide = Array.from(dots).findIndex(d => d.classList.contains('active')) + 1;
+      if (e.key === 'ArrowRight' && currentSlide < 6) {
+        document.getElementById(`slide-${currentSlide + 1}`).scrollIntoView({ behavior: 'smooth' });
+      } else if (e.key === 'ArrowLeft' && currentSlide > 1) {
+        document.getElementById(`slide-${currentSlide - 1}`).scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  </script>
+</body>
+</html>
