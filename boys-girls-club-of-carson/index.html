@@ -60,6 +60,30 @@
         .text-primary { color: var(--primary); }
         .text-secondary { color: var(--secondary); }
         .border-secondary { border-color: var(--secondary); }
+
+        /* Duotone effect for background images */
+        .duotone-overlay {
+            position: relative;
+        }
+        .duotone-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--primary);
+            mix-blend-mode: color;
+            opacity: 0.7;
+            z-index: 1;
+        }
+        .duotone-overlay::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, var(--primary) 0%, transparent 30%, transparent 70%, var(--primary-dark) 100%);
+            z-index: 2;
+        }
+        .duotone-overlay img {
+            filter: grayscale(100%) contrast(1.1);
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center selection:bg-[var(--secondary)]/30">
@@ -169,10 +193,10 @@
 
         <!-- SLIDE 3: IMPACT -->
         <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center group bg-primary border-white/10 border relative shadow-2xl rounded-xl">
-            <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 z-0 duotone-overlay">
                 <img src="assets/hero-2.jpg" class="w-full h-full object-cover opacity-80" alt="">
-                <div class="absolute inset-0 bg-gradient-to-b from-[var(--primary)]/90 via-[var(--primary)]/80 to-[var(--primary)]"></div>
             </div>
+            <div class="absolute inset-0 z-[3] bg-gradient-to-b from-[var(--primary)]/95 via-[var(--primary)]/85 to-[var(--primary)]"></div>
 
             <div class="flex flex-col z-10 p-6 md:p-10 relative h-full">
                 <header class="mb-6 [animation:animationIn_0.8s_ease-out_0s_both] animate-on-scroll">
@@ -211,10 +235,10 @@
 
         <!-- SLIDE 4: STORY -->
         <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center group bg-primary border-white/10 border relative shadow-2xl justify-between rounded-xl">
-            <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 z-0 duotone-overlay">
                 <img src="assets/hero-3.jpg" class="w-full h-full object-cover opacity-80" alt="">
-                <div class="absolute inset-0 bg-[var(--primary)]/85"></div>
             </div>
+            <div class="absolute inset-0 z-[3] bg-[var(--primary)]/90"></div>
 
             <div class="flex flex-col z-10 p-6 md:p-10 relative h-full justify-center">
                 <div class="mb-4 [animation:animationIn_0.8s_ease-out_0s_both] animate-on-scroll">
@@ -225,9 +249,14 @@
                     <p class="text-2xl md:text-3xl font-display text-white leading-tight mb-6">
                         "The Club kept me on track when I could have gone down the wrong path. Now I'm heading to college."
                     </p>
-                    <footer class="border-l-4 border-secondary pl-4">
-                        <p class="text-secondary font-bold">Destiny, Age 17</p>
-                        <p class="text-neutral-400 text-sm">5-Year Club Member</p>
+                    <footer class="flex items-center gap-4 border-l-4 border-secondary pl-4">
+                        <div class="w-12 h-12 rounded-full bg-white/10 border border-white/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-white/40"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
+  </div>
+                        <div>
+                            <p class="text-secondary font-bold">Destiny R.</p>
+                            <p class="text-neutral-400 text-sm">Club Alumni</p>
+                        </div>
                     </footer>
                 </blockquote>
             </div>
