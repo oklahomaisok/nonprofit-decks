@@ -7,6 +7,7 @@
     <meta name="description" content="Register now for our summer & afterschool program! Limited space available. Apply now for afterschool program starting August 7, 2023.">
     <meta property="og:title" content="Boys & Girls Club Of Albany | Impact Story">
     <meta property="og:description" content="Register now for our summer & afterschool program! Limited space available. Apply now for afterschool program starting August 7, 2023.">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Using BGCA web fonts: Helvetica Neue with system fallbacks -->
@@ -24,9 +25,9 @@
             --bgca-dark-blue: #004B87;
             --bgca-green: #84BF00;
             --bgca-orange: #FF8200;
-            /* BGCA Web Fonts: Helvetica Neue, fallback to system fonts */
-            --font-display: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            /* Dynamic fonts - set per organization */
+            --font-display: 'Helvetica Neue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --font-body: 'Helvetica Neue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         body {
@@ -282,23 +283,23 @@
             </div>
 
             <div class="flex flex-col z-10 p-6 md:p-10 relative h-full justify-center items-center text-center">
-                <div class="mb-8 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
+                <div class="mb-6 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
                     <img src="assets/logo.png" alt="Boys & Girls Club Of Albany" class="h-20 w-auto object-contain mx-auto mb-6 opacity-90">
                 </div>
 
-                <h2 class="text-3xl md:text-4xl font-display text-white uppercase tracking-wide mb-2 [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
-                    Join Our Mission
+                <h2 class="text-3xl md:text-4xl font-display text-white uppercase tracking-wide mb-4 [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
+                    Change a Life Today
                 </h2>
 
-                <p class="text-neutral-300 text-sm mb-8 max-w-xs mx-auto [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
-                    Partner with us to change young lives in your community.
+                <p class="text-neutral-200 text-base leading-relaxed mb-8 max-w-sm mx-auto [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
+                    Your $50 gift provides a month of after-school mentorship, homework help, and a safe place to belong for one child.
                 </p>
 
-                <div class="[animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll w-full">
-                    <a href="mailto:admin@bgcalbany.org?subject=Partnership%20Inquiry" class="block w-full py-4 bg-secondary rounded text-primary font-display text-xl uppercase tracking-widest font-bold hover:bg-white transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] transform">
-                        Get Involved
+                <div class="[animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll w-full max-w-xs">
+                    <a href="mailto:admin@bgcalbany.org?subject=I%20Want%20to%20Support%20Youth%20in%20My%20Community" class="block w-full py-4 px-6 bg-secondary rounded-lg text-primary font-display text-lg uppercase tracking-wider font-bold hover:bg-white transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] transform">
+                        Give $50 Now
                     </a>
-                    <p class="mt-4 text-[10px] text-neutral-500 uppercase tracking-widest">admin@bgcalbany.org</p>
+                    <p class="mt-6 text-[11px] text-neutral-400 tracking-wide">Questions? Contact us at admin@bgcalbany.org</p>
                 </div>
             </div>
         </section>
