@@ -10,9 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #5a5a47;
-      --secondary: #e8ddd4;
-      --accent: #ff6b35;
+      --primary: #2F4F4F;
+      --secondary: #F5F5DC;
+      --accent: #FF6B35;
       --nav-text: #ffffff;
     }
     body { font-family: 'Source Sans Pro', sans-serif; }
@@ -61,12 +61,12 @@
     <div class="slide">
       <div class="slide-content bg-pattern h-full flex flex-col text-white">
         <nav class="p-4 flex items-center" style="background-color: var(--primary)">
-          <span class="font-bold text-lg" style="color: var(--nav-text)">Farmhand Foundation</span>
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAA8CAIAAACsOWLGAAALRUlEQVR4nOxdWWwbxxne2YPk8hAlmbov0josW5IVR7GNuGiQNkmRFOiBtjFi13CRNgZaBEVf+tzXPvS5BYqibhEYaGqgAZqXAHVt1HFt2I5i+YxsybpIHZZISdR9kMvNv6RIkbuz3EMrHtJ+JuTF7szs7uy3///PN8fSZ979LpFEjOcJOSDcTj7+ywd47eflNebhjbu3WNo2kqlL8cnjt8hjDuSpxkUQXYXklmg1d2nChBhKtCEJEzJAxr1zagvKnwcwHDSxb4CQNqKA6zSKW3wat+RdIU/sHV7tJ2KZyCVMYpnYFWQQS87uZ7PPaXkomrZYLBRJQYYox0UiES4a1VTYXoV8xfLZMyHVWbJ47bw0JGk1kYdsQz2ZlWbouvrG1rbDXm+z210K6cML8/7RsaHBZwH/aDSdXrwxN4m0Bz9az4y0n0OuotQWhDK2ED4JksmKsIdywCrsKXbqCqH2q2rq3njz7aPdPeXl5Yjcbmae+gYxPz/X/+Th9WtXh54PECb2E6iuzjbFRFk47zvY+uGvf3uk86jd4ZC+4izLNjR6u7qPzUxPTU9Py2h+JjQgiys0UB/ZOVQRSw4eT+XPL3xYW1ef3WvYbCwwLzw3Ox7wm8RKhw4qFDqxklenyhUiHHEYxvLT879o8vrUxCJOp+uHP3lvIhAI+EeIvYs8SmWFA5Ingf36lXevr7mtvQMhtSV4PBWnz54H60WY2AfQT6zjJ14FcUFTlubWVl9zK2FiH0AnsSiK6jrWQ2gEeM+Oru70lqMJrShA14kyZBKU+C9TIJUJEaTyTFV1jctVojWkgPQtbW0kRXIZA0mygpfpW9PewES7/0T43W+ZkBptgQ4icvBPRbH4klHilEin8aiqqkW68noqqoBYhIm9Dp0CKUjtCO215owJA6GTWCtLy/oUqXB4jo+ZUtbeRUrH0md4xvwja6urTu1h1vDQIBdTduFFCu11aVh3ZOEA7UTHWl1Zfnj/nlajFYlEnjy6z8dUR+4mihb64+gb1/+7ubmpKcvUeGBo0OyN3hfQTyy/f+Tmjf9tbm6oTD8bCl7++KPl5SVCM3jcz0TBQng6+ofNcFHu40sX7XbH8ZOvkiSVJdiCsGBtbfVfly8NDvSTWsMQJFumZnLJNhry1rzVFd9q7o4kNIKCf7qxpWMR1NEdjG4AMg09fwZ/KyqqrFYbllscFx0bGf7HpYtCdJXfwFP25KZuYjx2RCzA5sbG068ez0y/oGnG4XDEnxFE57FIJApecmIicPvm559+cnlsdCj/zRmTWDmEAZMpgDEP+noHn/WXezz19Y0HPJWwc3lxEVgVCs4sLoZjZjNw/8GwWTqrqyur/pVx/5j0UKFIL7IRDZI3ZkXfSoD4JC/1r3agH6ELhaXmZZmEhOT6uQsOWh8F3ISO4YfEjmHOKzSxKzCJZWJXUKzEEsy75mWJshzBHcziQPgsbtWEAFrNQDDFSY8UJcyBJuLqJ8fFNtbXEvsTkeNuDLDRUazitFvVBclHOoUXluVAg8XCAItFUdRrr79x6Ein1WKDSwrPz1/57NPJyXHCxD6GAcTq6Or+wY/P2Gy2tH38Rxf/zPMZ8hVCJEWRHMcV/sAPEzuHAcQ6eeo1qzVjuk5j00HgUDQqECvhsLy+loYmr9PpCofnp8YDo6PDItrlADo8ngndUKdjZX0onooq0VNjWZZEZCIXxGf1jd4Lv/xNuecAGC3g02wo9Pe//un5wNP0LDkwY0i7BLQ/uWVISKx22IzgyGiKiUM0jcJd4hYltlit6U+xocELvT2JXPDXU1F5/MQp0pwEtqehymJV19S1H+msqa1z2F0xghvof3Lr/9cTPYBAIBGNhELpjBHPrMMuSlBdUyu1H5ArillPy0RRQplYlZXV71/4VUOTL2WoDra0PXp4fyE8D9sWi1VKEatAtW2DxLJ2UQJ3WXm692xubQfiQgS2tLjw7OlXQ4PPch+BSSErlSU8PA6F6DrzdE0ZpgUbVBzu6q5raEonioWxQBSVIBZ2HhgkBvOztY1z2U6HCzSvWPwR2e2Oc+c/qIrbMLiAb7+58off/276xVSWSyJ20H2pHnqkMqIgkY/LUg50XK4SUWwOsgFFM4ltsFjYXA6nk5CH0+VKMZWxMBCBQcgFTxH+wiF3aTlhosihTCzWJh4aCi0+Khl6M4wF+1pbrduyFlg4TALbFiOlTU47a65IU/RQjrFsQuidsQeUBDBZiW2GwXcK2Vh7ypUwVgyxmCTbwEyl/GYC1jStNV/DifRhJ+55j0kbysSys05RjQnrsCUtndAkxAkHYJCUlvlLV+pFMpg9RVaQwYwKpwpRKkvH3pLNFIgFNUUz4hk4JEhayRiLohhsZUpbgiIwyRKkcDhchIkih0KMJbTvKEayc3vtSFAWsB4gnVgkbl0aK2sjZADxuznBodgh+vqX2BhTtDgAIgSLRQpfCUjkZ/AWq8TtToVHrN0hTWBLMk+a2+F0QRsxlu+1Q4orvCs00Bk2S1KNiBLGJIh2CsRK7oy3+DDMAnJsPxQc81Ixll1CO4ewsjdJEAZrpHpWns3haHGk7mQxzd9BkP/WpJy/QjI1L7cIHhGT7lZwhdA/SNOYebFkcqfFipcbXE6FhWis1i1NgZaIEWDhdl/+NLG7UCAWhEdSi0XEQ6jE20kJ3YKYjKxdIXjPEt2zgjEzmVXcUCKWwCtMyzGlN8SFULxAmiIcQ2EagKx9yxWyEjnUZncg02TtNna5gun0rjwk4Vl6OJUOO7s1YIGh8Uu3uUpKUtsWG6bbh2UdyaNiZR/CL2gdoGh8p3HRcw4+V5SD98GwwUbyI/cNiW2VrlMQ2THEopJ8Su+6yUhAbatfWLkh1ckoiuF4PoYI014VPRQEUopkKBKTJkUsixXfCQ1HgVscJ7sqJJP8+AC0H4k4n5aWlmaDwVBwemhoYDMSIUwUMxSIRcY7nKX744EREIufnQ3OzoYsYH+sNouFSbluUhiqkG2ZpfiYLUEo8o8M37pxbWJifHI8EJqZXlxcgMJi3J5dp7SQoCM2UJslk1i4kVXYMcQC2yie4IjrV6/0P3pYUVVdU1dfW9vgqaisqqmx2Vg+njNh1SgaQ99IJJIQq8ZGh+EXi8VKS8uqa+t7Tpyqb2j89yf/nJsNEYZC81L6+fPHWfQwQ2dT4g+Rcncue2bMASWLhTDKO5HmyIBSoKEHg9Pj/rH19TXoQywpdTc2+UDHSq1Qmt7fHIlsTk2O931x996Xd8D9QZPzgMfjPdjSfqSzvqGprPyAPd4k7PvyruHEMpFLKI1ukCGpjWXBIgEz3jv3fkvroXB4HngwMRGYCPgD/pF7vXfX19ZSw4sTLw3HRSHN3ds379z8PBQKgvf0+Vo6jnZ3Heupq2sU2UVsL5AmgKt96eUT+r6CsbG+8aDviyiHGYBfUuLu6OwWpiDJADqi+nrvbGysE/Job+8s83iyLZ6UPMLx3Ory8vzcHFQdvLdyK43Vwkvpa0a48vz+kcDYqHR/S2t7ZXU1tjRIH/BvZQGv8orwNS5GVDY83wd9vdIYurauwetrFn9LRwpEouyfNkn0CZaVlcOvuaUNDNLK8srkZKD39q2n/Y+Bb5BmPDDqdpc+fnj/2pXPgjMvYE9zy6FT33z9cEcXZMeGYnYlfVUR5Qcq3j17npYfQ5EFSwsLA0+fLC0vSg+9dOz4j06fy0IsYMXa6gpUutxheIW+9Z13Dh/pVNM3Ay8nF41ubG4Ep1/03eu9f+8uvMHSZD2vnHzr7e9hzQDY/r/95Y+iOQQMYzl7/oOKykpslutX/5MiFryfp8/8jLWzoqudnwsNPx8Mh+dEeV/uOfHWO9+He/waAAD//xK6Tn0AAAAGSURBVAMAr9x/FeKDL7sAAAAASUVORK5CYII=" alt="Farmhand Foundation" class="h-10 object-contain">
         </nav>
         <div class="flex-1 flex flex-col justify-center items-center text-center p-8">
           <h1 class="text-4xl font-bold mb-4">Farmhand Foundation</h1>
           
-          <p class="text-xl max-w-md">We back the hands that feed. Supporting Farmhand means investing in regenerative agriculture that honors people and place, with a commitment to the next seven generations.</p>
+          <p class="text-xl max-w-md">We back the hands that feed. Supporting regenerative agriculture that honors people and place, with a commitment to the next seven generations.</p>
         </div>
         <div class="p-4 text-center text-sm opacity-60">Swipe to learn more →</div>
       </div>
@@ -78,8 +78,8 @@
         </nav>
         <div class="flex-1 flex flex-col justify-center p-8">
           <div class="text-sm uppercase tracking-wider mb-2" style="color: var(--accent)">The Challenge</div>
-          <h2 class="text-3xl font-bold mb-6">Farmers need support beyond just talk</h2>
-          <p class="text-lg opacity-90">We work from the soil up, in fields not offices. Listening comes first because farmers already know what they need.</p>
+          <h2 class="text-3xl font-bold mb-6">Supporting farmers who feed us</h2>
+          <p class="text-lg opacity-90">Farmers work from soil up in fields, not offices, often staying late and getting up early because they know what needs to be done.</p>
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@
         <div class="flex-1 flex flex-col justify-center p-8">
           <div class="text-sm uppercase tracking-wider mb-2" style="color: var(--accent)">Our Solution</div>
           <h2 class="text-3xl font-bold mb-6">How We Help</h2>
-          <p class="text-lg opacity-90">We handle the work behind the work - grants, compliance, soil repair, reporting, compost, certifications, market access, and storytelling that doesn't lie so farming can continue.</p>
+          <p class="text-lg opacity-90">We handle the work behind the work - compliance, soil repair, reporting, certifications, and market access storytelling so farming can continue.</p>
         </div>
       </div>
     </div>
