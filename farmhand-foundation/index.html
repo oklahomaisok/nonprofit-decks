@@ -1,358 +1,144 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farmhand Foundation | Impact Story</title>
-    <meta name="description" content="To empower farmers to embrace organic practices by providing resources, education and advocacy. We take on the behind-the-scenes work others often avoid—reading">
-    <meta property="og:title" content="Farmhand Foundation | Impact Story">
-    <meta property="og:description" content="To empower farmers to embrace organic practices by providing resources, education and advocacy. We take on the behind-the-scenes work others often avoid—reading">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <style>
-        :root {
-            --primary: #1a1a1a;
-            --secondary: #E07B39;
-            --primary-dark: #0d0d0d;
-            --logo-background: #1a1a1a;
-            --nav-text: #ffffff;
-            --nav-text-muted: #a3a3a3;
-            --bgca-blue: #0081C6;
-            --bgca-dark-blue: #004B87;
-            --bgca-green: #84BF00;
-            --bgca-orange: #FF8200;
-            --font-display: 'Helvetica Neue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            --font-body: 'Helvetica Neue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--primary-dark);
-            color: white;
-        }
-
-        h1, h2, h3, .font-display { font-family: var(--font-display); }
-
-        @keyframes animationIn {
-            0% { opacity: 0; transform: translateY(30px); filter: blur(8px); }
-            100% { opacity: 1; transform: translateY(0); filter: blur(0px); }
-        }
-
-        .animate-on-scroll { animation-play-state: paused !important; }
-        .animate-on-scroll.animate { animation-play-state: running !important; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        .slide-container {
-            width: 90vw;
-            height: 75vh;
-            min-width: 0;
-        }
-
-        @media (min-width: 768px) {
-            .slide-container {
-                width: 500px;
-                height: auto;
-                aspect-ratio: 3/4;
-            }
-        }
-
-        .bg-primary { background-color: var(--primary); }
-        .bg-primary-dark { background-color: var(--primary-dark); }
-        .bg-secondary { background-color: var(--secondary); }
-        .text-primary { color: var(--primary); }
-        .text-secondary { color: var(--secondary); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farmhand Foundation - Impact Story</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #5A5A4A;
+      --secondary: #F5F3E8;
+      --accent: #FFFFFF;
+      --nav-text: #ffffff;
+    }
+    body { font-family: 'Source Sans Pro', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+    .deck-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .deck-container::-webkit-scrollbar { display: none; }
+    .slide {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      min-height: 100vh;
+      width: 100vw;
+      max-width: 100%;
+    }
+    @media (min-width: 768px) {
+      .slide {
+        flex: 0 0 calc(100vh * 0.75);
+        width: calc(100vh * 0.75);
+        max-width: 400px;
+        min-height: 100vh;
+      }
+      .deck-container {
+        justify-content: center;
+        gap: 1rem;
+        padding: 0 2rem;
+      }
+    }
+    .slide-content {
+      background: linear-gradient(135deg, var(--primary) 0%, color-mix(in srgb, var(--primary) 80%, black) 100%);
+    }
+    .slide-alt {
+      background: linear-gradient(135deg, var(--secondary) 0%, color-mix(in srgb, var(--secondary) 90%, var(--primary)) 100%);
+    }
+    .bg-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+  </style>
 </head>
-<body class="min-h-screen flex flex-col items-center selection:bg-[var(--secondary)]/30">
-
-    <!-- Fixed Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-6 py-4 backdrop-blur-md border-b h-16" style="background-color: var(--logo-background); border-color: color-mix(in srgb, var(--nav-text) 10%, transparent);">
-        <div class="flex items-center gap-3 w-auto md:w-1/3">
-            <span class="font-display text-lg font-bold" style="color: var(--nav-text);">Farmhand Foundation</span>
+<body class="bg-gray-100">
+  <div class="deck-container">
+    <div class="slide">
+      <div class="slide-content bg-pattern h-full flex flex-col text-white">
+        <nav class="p-4 flex items-center" style="background-color: var(--primary)">
+          <span class="font-bold text-lg" style="color: var(--nav-text)">Farmhand Foundation</span>
+        </nav>
+        <div class="flex-1 flex flex-col justify-center items-center text-center p-8">
+          <h1 class="text-4xl font-bold mb-4">Farmhand Foundation</h1>
+          
+          <p class="text-xl max-w-md">We Back the Hands That Feed</p>
         </div>
-
-        <div id="pagination-dots" class="hidden sm:flex items-center justify-center gap-2 w-1/3">
-            <div class="w-1.5 h-1.5 rounded-full" style="background-color: color-mix(in srgb, var(--nav-text) 20%, transparent);"></div>
-            <div class="w-1.5 h-1.5 rounded-full" style="background-color: color-mix(in srgb, var(--nav-text) 20%, transparent);"></div>
-            <div class="w-1.5 h-1.5 rounded-full" style="background-color: color-mix(in srgb, var(--nav-text) 20%, transparent);"></div>
-            <div class="w-1.5 h-1.5 rounded-full" style="background-color: color-mix(in srgb, var(--nav-text) 20%, transparent);"></div>
-            <div class="w-1.5 h-1.5 rounded-full" style="background-color: color-mix(in srgb, var(--nav-text) 20%, transparent);"></div>
+        <div class="p-4 text-center text-sm opacity-60">Swipe to learn more →</div>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-alt bg-pattern h-full flex flex-col" style="color: var(--primary)">
+        <nav class="p-4" style="background-color: var(--primary)">
+          <span class="font-semibold text-white">Farmhand Foundation</span>
+        </nav>
+        <div class="flex-1 flex flex-col justify-center p-8">
+          <div class="text-sm uppercase tracking-wider mb-2" style="color: var(--accent)">The Challenge</div>
+          <h2 class="text-3xl font-bold mb-6">Supporting Agricultural Workers</h2>
+          <p class="text-lg opacity-90">The foundation focuses on backing the hands that feed our communities, supporting those in agriculture.</p>
         </div>
-
-        <div class="hidden md:flex items-center justify-end gap-2 w-1/3">
-            <button id="prevBtn" class="p-2 rounded-full transition-colors" style="color: var(--nav-text-muted);">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-            </button>
-            <button id="nextBtn" class="p-2 rounded-full transition-colors" style="color: var(--nav-text-muted);">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-            </button>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-content bg-pattern h-full flex flex-col text-white">
+        <nav class="p-4" style="background-color: var(--primary)">
+          <span class="font-semibold">Farmhand Foundation</span>
+        </nav>
+        <div class="flex-1 flex flex-col justify-center p-8">
+          <div class="text-sm uppercase tracking-wider mb-2" style="color: var(--accent)">Our Solution</div>
+          <h2 class="text-3xl font-bold mb-6">How We Help</h2>
+          <p class="text-lg opacity-90">The Farmhand Foundation provides support and resources to agricultural workers and farming communities through various programs and initiatives.</p>
         </div>
-
-        <div class="md:hidden flex items-center justify-end w-auto text-xs gap-1 opacity-80" style="color: var(--secondary);">
-            <span class="font-display font-bold tracking-widest uppercase">SWIPE</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 2l4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="M7 22l-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+      </div>
+    </div>
+    
+    <div class="slide">
+      <div class="slide-content bg-pattern h-full flex flex-col text-white">
+        <nav class="p-4" style="background-color: var(--primary)">
+          <span class="font-semibold">Farmhand Foundation</span>
+        </nav>
+        <div class="flex-1 flex flex-col justify-center p-8">
+          <div class="text-sm uppercase tracking-wider mb-4" style="color: var(--accent)">Voices</div>
+          
+    <div class="text-center">
+      <div class="w-16 h-16 rounded-full bg-white/20 mx-auto mb-4 flex items-center justify-center">
+        <svg class="w-8 h-8 opacity-60" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        </svg>
+      </div>
+      <p class="italic">"This organization has made a real difference in our community."</p>
+      <div class="mt-2 font-semibold">Community Member</div>
+    </div>
+  
         </div>
-    </nav>
-
-    <!-- Main Presentation Slider -->
-    <main id="slider" class="flex flex-row overflow-x-auto snap-x snap-mandatory hide-scrollbar w-full pt-24 md:pt-28 pb-6 md:pb-10 px-4 md:px-10 gap-x-4 md:gap-x-12 scroll-smooth" style="mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, black 5%, black 95%, transparent);">
-
-        <!-- SLIDE 1: HERO -->
-        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center group bg-primary border-white/10 border relative shadow-2xl justify-between rounded-xl">
-            <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)] via-[var(--primary-dark)]/80 to-[var(--primary-dark)]/60"></div>
-            </div>
-
-            <div class="flex flex-col z-10 p-6 md:p-10 relative h-full justify-between">
-                <div class="flex justify-end [animation:animationIn_0.8s_ease-out_0s_both] animate-on-scroll animate">
-                    <div class="bg-secondary text-primary px-3 py-1 text-[10px] font-bold rounded uppercase tracking-wider shadow-lg">
-                        Ojai, California
-                    </div>
-                </div>
-
-                <div class="mb-4">
-                    <h1 class="leading-[0.9] [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll animate text-4xl md:text-5xl tracking-wide font-display uppercase text-white mb-4 drop-shadow-lg">
-                        Great Futures<br>
-                        <span class="text-secondary">Start Here</span>
-                    </h1>
-                    <p class="[animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll animate text-lg text-neutral-200 max-w-[90%] border-l-4 border-secondary pl-4">
-                        To empower farmers to embrace organic practices by providing resources, education and advocacy. We take on the behind-the-scenes work others often avoid—reading the fine print, writing grants, restoring soil health, chasing certifications, and opening new markets—so farmers can stay focused on farming.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SLIDE 2: THE NEED -->
-        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center group bg-primary border-white/10 border relative shadow-2xl justify-between rounded-xl">
-            <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-gradient-to-b from-[var(--primary)] to-[var(--primary-dark)]"></div>
-            </div>
-
-            <div class="flex flex-col z-10 p-6 md:p-8 relative h-full">
-                <header class="mb-6 [animation:animationIn_0.8s_ease-out_0s_both] animate-on-scroll">
-                    <span class="text-xs text-secondary font-bold tracking-widest uppercase">The Challenge</span>
-                    <h2 class="text-3xl font-display text-white mt-1 uppercase">Why We Exist</h2>
-                </header>
-
-                <div class="flex-grow flex flex-col gap-4">
-                    <div class="bg-white/5 border border-white/10 p-5 rounded-lg [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
-                        <div class="flex items-center gap-3 mb-2">
-                            <div class="p-2 bg-secondary rounded-full text-primary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                            </div>
-                            <h3 class="text-white font-display text-xl uppercase tracking-wide">Farmers face barriers to organic transition</h3>
-                        </div>
-                        <p class="text-sm text-neutral-300 pl-11">
-                            Only 1 percent of farmland in the United States is organic. Farmers face a mountain of challenges in transitioning to organic or regenerative practices, from figuring out certification to covering costs, yield loss and administrative work.
-                        </p>
-                    </div>
-
-                    <div class="flex justify-center [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll text-white/30">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-                    </div>
-
-                    <div class="bg-gradient-to-br from-[var(--primary)] to-black border border-secondary/50 p-5 rounded-lg [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll relative overflow-hidden">
-                        <div class="absolute -right-4 -top-4 w-20 h-20 bg-secondary blur-[50px] opacity-20"></div>
-                        <div class="flex items-center gap-3 mb-2 relative z-10">
-                            <div class="p-2 bg-white/10 border border-white/20 rounded-full text-secondary">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                            </div>
-                            <h3 class="text-secondary font-display text-xl uppercase tracking-wide">Our Solution</h3>
-                        </div>
-                        <p class="text-sm text-neutral-300 pl-11 relative z-10">
-                            The Foundation provides financial, technical, and educational support over the three-year organic certification process, along with workshops, mentorship opportunities, and market-based solutions to ensure farmers have the tools they need to succeed.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SLIDE 3: IMPACT -->
-        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center group bg-primary border-white/10 border relative shadow-2xl rounded-xl">
-            <div class="absolute inset-0 z-[3] bg-gradient-to-b from-[var(--primary-dark)] via-[var(--primary-dark)]/90 to-[var(--primary-dark)]"></div>
-
-            <div class="flex flex-col z-10 p-6 md:p-10 relative h-full">
-                <header class="mb-6 [animation:animationIn_0.8s_ease-out_0s_both] animate-on-scroll">
-                    <span class="text-xs text-secondary font-bold tracking-widest uppercase">Our Impact</span>
-                    <h2 class="text-3xl font-display text-white mt-1 uppercase">By The Numbers</h2>
-                </header>
-
-                <div class="grid grid-cols-2 gap-4 [animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
-                    
-  <div class="bg-white/5 border border-white/10 p-4 rounded-lg">
-    <p class="text-3xl md:text-4xl font-display text-secondary mb-1">10</p>
-    <p class="text-sm text-neutral-300">Acres for innovation farm and learning center</p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="slide-content bg-pattern h-full flex flex-col text-white">
+        <nav class="p-4" style="background-color: var(--primary)">
+          <span class="font-semibold">Farmhand Foundation</span>
+        </nav>
+        <div class="flex-1 flex flex-col justify-center items-center text-center p-8">
+          <h2 class="text-3xl font-bold mb-6">Join Our Mission</h2>
+          <p class="text-lg opacity-90 mb-8">Together, we can make an even bigger impact.</p>
+          <a href="https://www.farmhandfoundation.org/donate" class="inline-block px-8 py-3 rounded-full font-semibold text-white" style="background-color: var(--accent)">Donate Now</a>
+          
+        </div>
+        <div class="p-4 text-center text-xs opacity-40">Generated by SwiftDeck</div>
+      </div>
+    </div>
   </div>
-
-  <div class="bg-white/5 border border-white/10 p-4 rounded-lg">
-    <p class="text-3xl md:text-4xl font-display text-secondary mb-1">3</p>
-    <p class="text-sm text-neutral-300">Farms in first cohort launching 2025</p>
-  </div>
-
-  <div class="bg-white/5 border border-white/10 p-4 rounded-lg">
-    <p class="text-3xl md:text-4xl font-display text-secondary mb-1">1</p>
-    <p class="text-sm text-neutral-300">Years in operation (founded 2024)</p>
-  </div>
-
-  <div class="bg-white/5 border border-white/10 p-4 rounded-lg">
-    <p class="text-3xl md:text-4xl font-display text-secondary mb-1">2</p>
-    <p class="text-sm text-neutral-300">Current employees</p>
-  </div>
-
-                </div>
-
-                <div class="mt-6 bg-white/5 border border-white/10 p-4 rounded-lg [animation:animationIn_0.8s_ease-out_0.4s_both] animate-on-scroll">
-                    <p class="text-sm text-secondary font-bold uppercase tracking-wide mb-1">Your Impact</p>
-                    <p class="text-white text-lg font-display">Your gift helps us serve more youth in our community.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SLIDE 4: STORY -->
-        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center group bg-primary border-white/10 border relative shadow-2xl justify-between rounded-xl">
-            <div class="absolute inset-0 z-[3] bg-[var(--primary-dark)]/95"></div>
-
-            <div class="flex flex-col z-10 p-6 md:p-10 relative h-full justify-center">
-                <div class="mb-4 [animation:animationIn_0.8s_ease-out_0s_both] animate-on-scroll">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="var(--secondary)" stroke="none" class="opacity-50 mb-4"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V21c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
-                </div>
-
-                <blockquote class="[animation:animationIn_0.8s_ease-out_0.2s_both] animate-on-scroll">
-                    <p class="text-2xl md:text-3xl font-display text-white leading-tight mb-6">
-                        "Whitney is exactly the leader we envisioned when creating the Farmhand Foundation"
-                    </p>
-                    <footer class="flex items-center gap-4 border-l-4 border-secondary pl-4">
-                        <div class="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center text-secondary font-bold">J</div>
-                        <div>
-                            <p class="text-secondary font-bold">Justin Herber</p>
-                            <p class="text-neutral-400 text-sm">Co-founder of the Farmhand Foundation</p>
-                        </div>
-                    </footer>
-                </blockquote>
-            </div>
-        </section>
-
-        <!-- SLIDE 5: CTA -->
-        <section class="slide-container flex-shrink-0 flex flex-col overflow-hidden snap-center group bg-primary border-white/10 border relative shadow-2xl justify-between rounded-xl">
-            <div class="absolute inset-0 z-0">
-                <div class="absolute inset-0 bg-gradient-to-t from-[var(--primary-dark)] to-[var(--primary)]"></div>
-            </div>
-
-            <div class="flex flex-col z-10 p-6 md:p-10 relative h-full justify-center items-center text-center">
-                <div class="mb-6 [animation:animationIn_0.8s_ease-out_0.1s_both] animate-on-scroll">
-                    
-                </div>
-
-                <h2 class="text-3xl md:text-4xl font-display text-white uppercase tracking-wide mb-4 [animation:animationIn_0.8s_ease-out_0.3s_both] animate-on-scroll">
-                    Join Our Mission
-                </h2>
-
-                <p class="text-neutral-200 text-base leading-relaxed mb-8 max-w-sm mx-auto [animation:animationIn_0.8s_ease-out_0.5s_both] animate-on-scroll">
-                    To empower farmers to embrace organic practices by providing resources, education and advocacy. We take on the behind-the-scenes work others often avoid—reading the fine print, writing grants, restoring soil health, chasing certifications, and opening new markets—so farmers can stay focused on farming.
-                </p>
-
-                <div class="[animation:animationIn_0.8s_ease-out_0.7s_both] animate-on-scroll w-full max-w-xs">
-                    <a href="mailto:info@thefarmhandfoundation.org?subject=Supporting%20Farmhand%20Foundation" class="block w-full py-4 px-6 bg-secondary rounded-lg text-primary font-display text-lg uppercase tracking-wider font-bold hover:bg-white transition-all shadow-lg hover:shadow-xl hover:scale-[1.02] transform">
-                        Get Involved
-                    </a>
-                    <p class="mt-6 text-[11px] text-neutral-400 tracking-wide">Questions? Contact us at info@thefarmhandfoundation.org</p>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <script>
-        lucide.createIcons();
-    </script>
-
-    <script>
-      (function () {
-        const once = true;
-
-        if (!window.__inViewIO) {
-          window.__inViewIO = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("animate");
-                if (once) window.__inViewIO.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.2, rootMargin: "0px -10% 0px -10%" });
-        }
-
-        window.initInViewAnimations = function (selector = ".animate-on-scroll") {
-          document.querySelectorAll(selector).forEach((el) => {
-            window.__inViewIO.observe(el);
-          });
-        };
-
-        document.addEventListener("DOMContentLoaded", () => {
-            initInViewAnimations();
-            initPagination();
-        });
-
-        function initPagination() {
-            const slider = document.getElementById('slider');
-            const slides = document.querySelectorAll('.slide-container');
-            const dotsContainer = document.getElementById('pagination-dots');
-            const dots = dotsContainer.children;
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-
-            const updateDots = (activeIndex) => {
-                Array.from(dots).forEach((dot, index) => {
-                    if (index === activeIndex) {
-                        dot.className = "w-1.5 h-1.5 rounded-full bg-secondary transition-all transform scale-125";
-                        dot.style.backgroundColor = "var(--secondary)";
-                    } else {
-                        dot.className = "w-1.5 h-1.5 rounded-full bg-white/20 hover:bg-secondary transition-all";
-                        dot.style.backgroundColor = "";
-                    }
-                });
-            };
-
-            const slideObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const index = Array.from(slides).indexOf(entry.target);
-                        if(index !== -1) {
-                            updateDots(index);
-                        }
-                    }
-                });
-            }, {
-                root: slider,
-                threshold: 0.6
-            });
-
-            slides.forEach(slide => slideObserver.observe(slide));
-
-            Array.from(dots).forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    slides[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-                });
-            });
-
-            const getScrollAmount = () => {
-                 return window.innerWidth < 768 ? window.innerWidth * 0.85 : 548;
-            };
-
-            if(prevBtn && nextBtn && slider) {
-                nextBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-                });
-
-                prevBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-                });
-            }
-        }
-      })();
-    </script>
-
+  <script>
+    document.addEventListener('keydown', (e) => {
+      const container = document.querySelector('.deck-container');
+      const slideWidth = container.querySelector('.slide').offsetWidth;
+      if (e.key === 'ArrowRight') container.scrollBy({ left: slideWidth, behavior: 'smooth' });
+      if (e.key === 'ArrowLeft') container.scrollBy({ left: -slideWidth, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
