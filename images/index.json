@@ -1,0 +1,206 @@
+{
+  "version": "1.0",
+  "generated": "2025-01-31",
+  "totalImages": 57,
+  "sectors": {
+    "youth-development": {
+      "name": "Youth Development",
+      "keywords": ["youth", "mentorship", "afterschool", "boys and girls club", "big brothers", "big sisters", "tutoring", "child development"],
+      "images": {
+        "hero": ["youth-dev-hero-reading-girl.jpg", "youth-dev-hero-teen-boy.jpg"],
+        "action": ["youth-dev-action-mentor-bench.jpg"],
+        "group": ["youth-dev-group-circle.jpg"]
+      }
+    },
+    "youth-sports-soccer": {
+      "name": "Youth Sports - Soccer",
+      "keywords": ["soccer", "football", "youth soccer", "futbol", "youth league", "recreational soccer"],
+      "images": {
+        "hero": ["soccer-hero-girl-kick.jpg", "soccer-hero-young-child.jpg"],
+        "action": ["soccer-action-two-players.jpg"],
+        "group": ["soccer-group-team-huddle.jpg"]
+      }
+    },
+    "youth-sports-basketball": {
+      "name": "Youth Sports - Basketball",
+      "keywords": ["basketball", "youth basketball", "hoops", "basketball league"],
+      "images": {
+        "hero": [],
+        "action": ["basketball-action-one-on-one.jpg"],
+        "group": ["basketball-group-team.jpg"]
+      }
+    },
+    "agriculture": {
+      "name": "Agriculture",
+      "keywords": ["agriculture", "farming", "farm", "garden", "community garden", "urban farm", "sustainable", "harvest"],
+      "images": {
+        "hero": ["agriculture-hero-farmer-plants.jpg"],
+        "action": ["agriculture-action-teaching.jpg"],
+        "group": ["agriculture-group-gardeners.jpg"]
+      }
+    },
+    "food-bank": {
+      "name": "Food Bank",
+      "keywords": ["food bank", "food pantry", "hunger", "food insecurity", "meals", "feeding", "food distribution"],
+      "images": {
+        "hero": ["foodbank-hero-volunteer.jpg"],
+        "action": ["foodbank-action-distribution.jpg"],
+        "group": ["foodbank-group-volunteers.jpg"]
+      }
+    },
+    "education": {
+      "name": "Education",
+      "keywords": ["education", "literacy", "reading", "school", "tutoring", "learning", "academic", "scholarship"],
+      "images": {
+        "hero": ["education-hero-student-girl.jpg"],
+        "action": ["education-action-reading.jpg"],
+        "group": ["education-group-students.jpg"]
+      }
+    },
+    "environment": {
+      "name": "Environment",
+      "keywords": ["environment", "conservation", "cleanup", "sustainability", "nature", "trees", "parks", "green", "climate", "wildlife"],
+      "images": {
+        "hero": ["environment-hero-cleanup.jpg"],
+        "action": ["environment-action-planting.jpg"],
+        "group": ["environment-group-volunteers.jpg"]
+      }
+    },
+    "animal-welfare": {
+      "name": "Animal Welfare",
+      "keywords": ["animal", "pet", "shelter", "rescue", "adoption", "humane", "spca", "dog", "cat", "wildlife rescue"],
+      "images": {
+        "hero": ["animal-hero-dog-volunteer.jpg"],
+        "action": [],
+        "group": ["animal-group-volunteers-dogs.jpg"]
+      }
+    },
+    "veterans": {
+      "name": "Veterans",
+      "keywords": ["veteran", "military", "armed forces", "service member", "vfw", "american legion", "wounded warrior"],
+      "images": {
+        "hero": ["veterans-hero-portrait.jpg"],
+        "action": ["veterans-action-connection.jpg"],
+        "group": ["veterans-group-together.jpg"]
+      }
+    },
+    "seniors": {
+      "name": "Seniors",
+      "keywords": ["senior", "elderly", "aging", "older adults", "retirement", "meals on wheels", "companionship"],
+      "images": {
+        "hero": ["seniors-hero-woman.jpg"],
+        "action": ["seniors-action-walking.jpg"],
+        "group": ["seniors-group-friends.jpg"]
+      }
+    },
+    "arts-culture": {
+      "name": "Arts & Culture",
+      "keywords": ["arts", "culture", "music", "theater", "dance", "museum", "gallery", "creative", "performance"],
+      "images": {
+        "hero": ["arts-hero-painter.jpg"],
+        "action": ["arts-action-music-lesson.jpg"],
+        "group": ["arts-group-musicians.jpg"]
+      }
+    },
+    "housing": {
+      "name": "Housing",
+      "keywords": ["housing", "homeless", "shelter", "habitat", "affordable housing", "home", "housing stability"],
+      "images": {
+        "hero": ["housing-hero-family-home.jpg"],
+        "action": ["housing-action-building.jpg"],
+        "group": ["housing-group-build-team.jpg"]
+      }
+    },
+    "healthcare": {
+      "name": "Healthcare",
+      "keywords": ["health", "healthcare", "medical", "clinic", "hospital", "wellness", "nursing", "doctors", "medicine"],
+      "images": {
+        "hero": ["healthcare-hero-nurse.jpg"],
+        "action": ["healthcare-action-screening.jpg"],
+        "group": ["healthcare-group-team.jpg"]
+      }
+    },
+    "community": {
+      "name": "Community - General",
+      "keywords": ["community", "neighborhood", "civic", "local", "united way", "community foundation"],
+      "images": {
+        "hero": ["community-hero-leader.jpg"],
+        "action": ["community-action-neighbors.jpg"],
+        "group": ["community-group-gathering.jpg"]
+      }
+    },
+    "disaster-relief": {
+      "name": "Disaster Relief",
+      "keywords": ["disaster", "relief", "emergency", "red cross", "hurricane", "flood", "fire", "recovery", "crisis"],
+      "images": {
+        "hero": ["disaster-hero-responder.jpg"],
+        "action": ["disaster-action-supplies.jpg"],
+        "group": ["disaster-group-team.jpg"]
+      }
+    },
+    "disability-services": {
+      "name": "Disability Services",
+      "keywords": ["disability", "disabilities", "special needs", "accessibility", "inclusive", "adaptive", "support services"],
+      "images": {
+        "hero": ["disability-hero-woman.jpg"],
+        "action": ["disability-action-gardening.jpg"],
+        "group": ["disability-group-inclusive.jpg"]
+      }
+    },
+    "mental-health": {
+      "name": "Mental Health",
+      "keywords": ["mental health", "counseling", "therapy", "wellness", "suicide prevention", "crisis", "support", "behavioral health"],
+      "images": {
+        "hero": ["mentalhealth-hero-peace.jpg"],
+        "action": ["mentalhealth-action-support.jpg"],
+        "group": ["mentalhealth-group-circle.jpg"]
+      }
+    },
+    "refugee-immigration": {
+      "name": "Refugee & Immigration Services",
+      "keywords": ["refugee", "immigration", "immigrant", "resettlement", "asylum", "newcomer", "integration"],
+      "images": {
+        "hero": ["refugee-hero-mother-child.jpg"],
+        "action": ["refugee-action-assistance.jpg"],
+        "group": ["refugee-group-welcome.jpg"]
+      }
+    },
+    "lgbtq": {
+      "name": "LGBTQ+ Services",
+      "keywords": ["lgbtq", "lgbt", "pride", "queer", "transgender", "equality", "inclusion"],
+      "images": {
+        "hero": ["lgbtq-hero-authentic.jpg"],
+        "action": ["lgbtq-action-volunteering.jpg"],
+        "group": ["lgbtq-group-community.jpg"]
+      }
+    }
+  },
+  "fallback": {
+    "description": "Use community images when sector cannot be determined",
+    "sector": "community"
+  },
+  "sectorAliases": {
+    "boys and girls club": "youth-development",
+    "bgc": "youth-development",
+    "ymca": "youth-development",
+    "ywca": "youth-development",
+    "big brothers big sisters": "youth-development",
+    "soccer club": "youth-sports-soccer",
+    "basketball league": "youth-sports-basketball",
+    "food pantry": "food-bank",
+    "feeding america": "food-bank",
+    "meals on wheels": "seniors",
+    "habitat for humanity": "housing",
+    "red cross": "disaster-relief",
+    "doctors without borders": "healthcare",
+    "msf": "healthcare",
+    "humane society": "animal-welfare",
+    "aspca": "animal-welfare",
+    "spca": "animal-welfare",
+    "sierra club": "environment",
+    "nature conservancy": "environment",
+    "united way": "community",
+    "salvation army": "community",
+    "goodwill": "community"
+  }
+}
