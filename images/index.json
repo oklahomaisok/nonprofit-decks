@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "generated": "2025-01-31",
-  "totalImages": 57,
+  "totalImages": 59,
   "sectors": {
     "youth-development": {
       "name": "Youth Development",
@@ -25,7 +25,7 @@
       "name": "Youth Sports - Basketball",
       "keywords": ["basketball", "youth basketball", "hoops", "basketball league"],
       "images": {
-        "hero": [],
+        "hero": ["basketball-hero-teen-shot.jpg"],
         "action": ["basketball-action-one-on-one.jpg"],
         "group": ["basketball-group-team.jpg"]
       }
@@ -71,7 +71,7 @@
       "keywords": ["animal", "pet", "shelter", "rescue", "adoption", "humane", "spca", "dog", "cat", "wildlife rescue"],
       "images": {
         "hero": ["animal-hero-dog-volunteer.jpg"],
-        "action": [],
+        "action": ["animal-action-walking.jpg"],
         "group": ["animal-group-volunteers-dogs.jpg"]
       }
     },
