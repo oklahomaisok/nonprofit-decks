@@ -131,7 +131,7 @@
     },
     "disaster-relief": {
       "name": "Disaster Relief",
-      "keywords": ["disaster", "relief", "emergency", "red cross", "hurricane", "flood", "fire", "recovery", "crisis"],
+      "keywords": ["disaster", "relief", "emergency response", "red cross", "hurricane", "flood", "fire", "tornado", "earthquake", "natural disaster", "disaster recovery"],
       "images": {
         "hero": ["disaster-hero-responder.jpg"],
         "action": ["disaster-action-supplies.jpg"],
@@ -149,7 +149,7 @@
     },
     "mental-health": {
       "name": "Mental Health",
-      "keywords": ["mental health", "counseling", "therapy", "wellness", "suicide prevention", "crisis", "support", "behavioral health"],
+      "keywords": ["mental health", "counseling", "therapy", "wellness", "suicide prevention", "crisis", "support", "behavioral health", "child advocacy", "abuse prevention", "trauma", "victim advocacy", "victim services", "sexual abuse", "domestic violence", "crisis intervention", "advocacy center"],
       "images": {
         "hero": ["mentalhealth-hero-peace.jpg"],
         "action": ["mentalhealth-action-support.jpg"],
@@ -180,6 +180,10 @@
     "sector": "community"
   },
   "sectorAliases": {
+    "child advocacy center": "mental-health",
+    "children's advocacy center": "mental-health",
+    "casa": "mental-health",
+    "domestic violence shelter": "mental-health",
     "boys and girls club": "youth-development",
     "bgc": "youth-development",
     "ymca": "youth-development",
